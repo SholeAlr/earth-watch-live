@@ -3,6 +3,7 @@ import "leaflet/dist/leaflet.css";
 
 import { IconMarker } from "./IconMarker";
 import { useDisasters } from "../../hooks";
+import { Loading } from "./Loading";
 
 const MapView = () => {
   const { data: events, isLoading, isError } = useDisasters();
@@ -29,6 +30,8 @@ const MapView = () => {
           />
         )),
       )}
+
+      {isLoading && <Loading />}
     </MapContainer>
   );
 };
