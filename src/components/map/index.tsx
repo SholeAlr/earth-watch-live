@@ -7,13 +7,10 @@ import { useDisasters } from "../../hooks";
 const MapView = () => {
   const { data: events, isLoading, isError } = useDisasters();
 
-  if (isLoading) return <p>Loading disasters...</p>;
-  if (isError) return <p>Error loading disasters!</p>;
-
   return (
     <MapContainer
-      center={[20, 0]}
-      zoom={2}
+      center={[39.0, 35.0]}
+      zoom={6}
       style={{ height: "100vh", width: "100%" }}
     >
       <TileLayer
