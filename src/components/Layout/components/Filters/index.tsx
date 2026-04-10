@@ -12,8 +12,10 @@ export const Filters: FC<SidebarProps> = ({
   setSelectedFilter,
 }) => {
   const toggle = (type: DisasterType) => {
-    setSelectedFilter((prev) =>
-      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type],
+    setSelectedFilter((prev: any) =>
+      prev.includes(type)
+        ? prev.filter((t: any) => t !== type)
+        : [...prev, type],
     );
   };
 
