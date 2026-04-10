@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# 🌍 Earth Watch Live
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time Earth visualization and monitoring project that provides live geospatial data and dynamic global updates through an interactive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Overview
 
-## React Compiler
+**Earth Watch Live** is a web-based project that visualizes real-time Earth-related data such as environmental conditions and geospatial signals. The goal is to create a “live view of the planet” experience using continuously updated data streams and interactive visualization.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🌐 Real-time Earth visualization  
+- 🌦️ Live environmental data updates  
+- 🛰️ Geospatial monitoring interface  
+- 📊 Dynamic global data display  
+- ⚡ Fast and responsive UI  
+- 🔄 Auto-updating live data streams  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🖥️ Demo
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+---
+
+## 📸 Preview
+
+<img width="1512" height="739" alt="image" src="https://github.com/user-attachments/assets/fae3c10f-1afd-43af-bd47-417610e61075" />
+
+---
+
+## 🛠️ Tech Stack
+
+- Frontend: React / Next.js / HTML / CSS / JavaScript (update based on your project)
+- Data Handling: REST APIs / WebSockets
+- Visualization: Leaflet / Mapbox / Three.js (if used)
+- Hosting: Vercel / Netlify / GitHub Pages
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SholeAlr/earth-watch-live.git
+```
+Navigate into the project:
+
+```bash
+cd earth-watch-live
+```
+Install dependencies:
+
+```bash
+npm install
+```
+or
+```bash
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Run the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+or
+```bash
+yarn dev
+```
+
+## 🌐 Data Sources
+
+This project uses public APIs such as:
+
+- NASA Open APIs
+- Openstreet maps
