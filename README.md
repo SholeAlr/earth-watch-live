@@ -24,7 +24,6 @@ A real-time Earth visualization and monitoring project that provides live geospa
 ## 🖥️ Demo
 
 ---
----
 
 ## 📸 Preview
 
