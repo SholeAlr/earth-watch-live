@@ -1,0 +1,1 @@
+export { useDisasters } from "./getNaturalEvents";

@@ -1,0 +1,83 @@
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  p {
+    margin-top: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.spinner-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.earth {
+  font-size: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: spinEarth 4s linear infinite;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  animation: orbit 3s linear infinite;
+
+  .emoji {
+    position: absolute;
+    top: -12px; // half emoji size to center vertically
+    left: 50px; // radius from center
+    font-size: 24px;
+    animation: pulse 1.2s ease-in-out infinite alternate;
+  }
+}
+
+/* Rotate the Earth */
+@keyframes spinEarth {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Orbiting emojis */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.4);
+  }
+}

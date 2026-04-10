@@ -1,0 +1,19 @@
+.filters-container {
+  width: 100%;
+  padding: 6px 12px;
+  display: flex;
+  flex-direction: column;
+
+  .filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .filter-item {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      align-items: center;
+    }
+  }
+}
