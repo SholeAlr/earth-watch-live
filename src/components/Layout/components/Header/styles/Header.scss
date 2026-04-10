@@ -1,0 +1,34 @@
+.header {
+  background-color: #372aac;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 12px;
+
+  h1 {
+    width: 340px;
+    text-wrap: nowrap;
+  }
+
+  .ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    color: white;
+  }
+}
+
+.ticker-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 450s linear infinite;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
