@@ -7,6 +7,7 @@ export const useDisasters = () => {
     queryFn: fetchDisasters,
     refetchInterval: 1000 * 60 * 3,
     refetchOnWindowFocus: true,
-    staleTime: 1000 * 60 * 30,
+    staleTime: 1000 * 60 * 3,
+    retry: 0,
   });
 };
