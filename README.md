@@ -23,6 +23,8 @@ A real-time Earth visualization and monitoring project that provides live geospa
 
 ## 🖥️ Demo
 
+https://earth-watch-live.vercel.app/
+
 ---
 
 ## 📸 Preview
