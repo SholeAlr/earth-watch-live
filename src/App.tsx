@@ -4,13 +4,19 @@ import { Map, Layout } from "./components";
 import { DISASTER_TYPES, type DisasterType } from "./types";
 
 function App() {
-  const [selectedTypes, setSelectedTypes] = useState<DisasterType[]>([
+  const [selectedFilter, setSelectedFilter] = useState<DisasterType[]>([
     ...DISASTER_TYPES,
   ]);
 
+  const onToggleFilter = (type: DisasterType) => {
+    setSelectedFilter((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type],
+    );
+  };
+
   return (
-    <Layout selectedFilter={selectedTypes} setSelectedFilter={setSelectedTypes}>
-      <Map selectedFilter={selectedTypes} />
+    <Layout selectedFilter={selectedFilter} onToggleFilter={onToggleFilter}>
+      <Map selectedFilter={selectedFilter} />
     </Layout>
   );
 }

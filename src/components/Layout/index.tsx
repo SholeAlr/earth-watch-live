@@ -4,7 +4,7 @@ import { Header, Filters } from "./components";
 
 export const Layout: FC<LayoutProps> = ({
   selectedFilter,
-  setSelectedFilter,
+  onToggleFilter,
   children,
 }) => {
   return (
@@ -12,7 +12,7 @@ export const Layout: FC<LayoutProps> = ({
       <Header />
       <Filters
         selectedFilter={selectedFilter}
-        setSelectedFilter={setSelectedFilter}
+        onToggleFilter={onToggleFilter}
       />
       {children}
     </div>

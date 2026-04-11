@@ -1,24 +1,12 @@
 import type { FC } from "react";
-import {
-  DISASTER_TYPES,
-  type DisasterType,
-  type SidebarProps,
-} from "../../../../types";
+import { DISASTER_TYPES, type SidebarProps } from "../../../../types";
 import "./styles/Filters.scss";
 import { DISASTER_LABELS } from "./constants";
 
 export const Filters: FC<SidebarProps> = ({
   selectedFilter,
-  setSelectedFilter,
+  onToggleFilter,
 }) => {
-  const toggle = (type: DisasterType) => {
-    setSelectedFilter((prev: any) =>
-      prev.includes(type)
-        ? prev.filter((t: any) => t !== type)
-        : [...prev, type],
-    );
-  };
-
   return (
     <div className='filters-container'>
       <h3>Filters</h3>
@@ -29,7 +17,7 @@ export const Filters: FC<SidebarProps> = ({
             <input
               type='checkbox'
               checked={selectedFilter.includes(type)}
-              onChange={() => toggle(type)}
+              onChange={() => onToggleFilter(type)}
             />
             <p>{DISASTER_LABELS[type]}</p>
           </div>
