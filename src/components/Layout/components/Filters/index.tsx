@@ -9,8 +9,6 @@ export const Filters: FC<SidebarProps> = ({
 }) => {
   return (
     <div className='filters-container'>
-      <h3>Filters</h3>
-
       <span className='filter-wrapper'>
         {DISASTER_TYPES.map((type) => (
           <div className='filter-item' key={type}>

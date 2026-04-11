@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { useMemo, type FC } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -20,6 +20,30 @@ const MapView: FC<MapProps> = ({ selectedFilter }) => {
     sealakeice: "sealakeice",
   };
 
+  const markers = useMemo(() => {
+    if (!events) return [];
+
+    return events
+      .filter((event) =>
+        event.categories.some((cat) => {
+          const mapped = CATEGORY_MAP[cat.id];
+          return mapped && selectedFilter.includes(mapped);
+        }),
+      )
+      .flatMap((event) =>
+        event.geometry.map((geo, index) => ({
+          key: `${event.id}-${index}`,
+          position: [geo.coordinates[1], geo.coordinates[0]] as [
+            number,
+            number,
+          ],
+          category: event.categories[0]?.id || "",
+          title: event.title,
+          date: new Date(geo.date).toLocaleDateString(),
+        })),
+      );
+  }, [events, selectedFilter]);
+
   return (
     <MapContainer
       center={[39.0, 35.0]}
@@ -33,26 +57,10 @@ const MapView: FC<MapProps> = ({ selectedFilter }) => {
 
       {!isError &&
         !isLoading &&
-        events
-          ?.filter((event) =>
-            event.categories.some((cat) => {
-              const mapped = CATEGORY_MAP[cat.id];
-              return mapped && selectedFilter.includes(mapped);
-            }),
-          )
-          .map((event) =>
-            event.geometry.map((geo, index) => (
-              <IconMarker
-                key={`${event.id}-${index}`}
-                position={[geo.coordinates[1], geo.coordinates[0]]}
-                category={event.categories[0]?.id || ""}
-                title={event.title}
-                date={new Date(geo.date).toLocaleDateString()}
-              />
-            )),
-          )}
+        markers.map((marker) => <IconMarker {...marker} />)}
 
       {isLoading && <Loading />}
+
       {isError && !isLoading && (
         <ErrorScreen message={error?.message} onRetry={refetch} />
       )}
