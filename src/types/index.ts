@@ -10,5 +10,5 @@ export type DisasterType = (typeof DISASTER_TYPES)[number];
 
 export interface SidebarProps {
   selectedFilter: DisasterType[];
-  setSelectedFilter: (selectedFilter: any) => void;
+  onToggleFilter: (type: DisasterType) => void;
 }

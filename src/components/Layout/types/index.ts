@@ -4,5 +4,5 @@ import type { DisasterType } from "../../../types";
 export interface LayoutProps {
   children: ReactNode;
   selectedFilter: DisasterType[];
-  setSelectedFilter: (selectedFilter: DisasterType[]) => void;
+  onToggleFilter: (type: DisasterType) => void;
 }
